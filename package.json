@@ -1,0 +1,21 @@
+{
+  "name": "saad",
+  "version": "1.0.0",
+  "description": "Servicio aleatorio de ahorro diario ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Eduardo Cuevas Solorza",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "prisma": "^6.0.1"
+  }
+}

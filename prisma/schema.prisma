@@ -1,0 +1,32 @@
+generator client{
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url = env("DATABASE_URL")
+}
+
+
+model SavingsHistory{
+    saving_history_id Int @id @default(autoincrement())
+    date DateTime @db.Date @unique
+    number Int
+    group Int
+    savings_users SavingsUsers[]
+}
+
+model Users{
+    user_id Int @id @default(autoincrement())
+    name String
+    savings_users SavingsUsers[]
+}
+
+model SavingsUsers{
+    savings_users_id Int @id @default(autoincrement())
+    status Boolean
+    saving_history_id Int
+    savings_history SavingsHistory @relation(fields: [saving_history_id], references: [saving_history_id], onDelete: Cascade)
+    user_id Int
+    users Users @relation(fields: [user_id], references: [user_id])
+}
