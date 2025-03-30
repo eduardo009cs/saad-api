@@ -4,5 +4,7 @@ export const config = {
     PORT: process.env.PORT,
     GMAIL_PASS: process.env.GMAIL_PASS,
     GMAIL_FROM: process.env.GMAIL_FROM,
-    GMAIL_TO: process.env.GMAIL_TO
+    GMAIL_TO: process.env.GMAIL_TO,
+    APP_URL: process.env.APP_URL,
+
 }
