@@ -4,7 +4,6 @@ import { response } from "../utils/responseMessages.js"
 
 export const getAllSavings = async (req, res) =>{
     try {
-        console.log("GET: /savings")
         const savings = await sh.getAllSavings()
         if(!savings){
             return res.status(400).json(response["400"])

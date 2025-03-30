@@ -5,9 +5,11 @@ const prisma = new PrismaClient()
 
 export const getAllSavings = async () => {
     return await prisma.savingsHistory.findMany({
-        orderBy:{
-            saving_history_id:"asc"
-        },
+        orderBy:[
+            {
+                date:"desc"
+            }
+        ],
         include:{
             savings_users:{
                 orderBy:{

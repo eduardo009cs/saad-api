@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "author": "Eduardo Cuevas Solorza",
   "license": "ISC",
@@ -13,7 +14,10 @@
     "@prisma/client": "^6.0.1",
     "cors": "^2.8.5",
     "express": "^4.21.2",
-    "nodemon": "^3.1.7"
+    "nodemailer": "^6.10.0",
+    "nodemon": "^3.1.7",
+    "react-whatsapp": "^0.3.0",
+    "resend": "^4.1.2"
   },
   "devDependencies": {
     "prisma": "^6.0.1"

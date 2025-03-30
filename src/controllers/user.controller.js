@@ -3,7 +3,6 @@ import { response } from '../utils/responseMessages.js'
 
 export const getAllUsers = async (req, res) =>{
     try {
-        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
         const users = await userService.getAllUsers()
         
         if(users.length === 0){
