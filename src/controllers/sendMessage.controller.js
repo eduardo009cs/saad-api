@@ -14,12 +14,12 @@ export const sendMessage = async (req, res) =>{
         const data = await fs.readFile("./public/template/index.html","utf8")
         const{users,waitingSaving, totalSaving} = req.body;
 
-        let emailContent = data.replace("##WaitingSaving##",parseInt(waitingSaving).toLocaleString('es-MX',{style:"currency", currency:"MXN"}));
-        emailContent = emailContent.replace("##TotalSaving##",parseInt(totalSaving).toLocaleString('es-MX',{style:"currency", currency:"MXN"}));
+        let emailContent = data.replace("##WaitingSaving##",parseFloat(waitingSaving).toLocaleString('es-MX',{style:"currency", currency:"MXN"}));
+        emailContent = emailContent.replace("##TotalSaving##",parseFloat(totalSaving).toLocaleString('es-MX',{style:"currency", currency:"MXN"}));
         emailContent = emailContent.replace("##AppUrl##",appUrl);
         let pendingSaving = "" ;
         users.forEach((user) => {
-            pendingSaving += `<p>Pendiente ${user.name}: ${parseInt(user.saving).toLocaleString('es-MX',{style:"currency", currency:"MXN"})}</p>\n`
+            pendingSaving += `<p>Pendiente ${user.name}: ${parseFloat(user.saving).toLocaleString('es-MX',{style:"currency", currency:"MXN"})}</p>\n`
         });
         emailContent = emailContent.replace("##UserPending##",pendingSaving);
         const transporter = nodemailer.createTransport({
